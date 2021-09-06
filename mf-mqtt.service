@@ -1,0 +1,15 @@
+[Unit]
+Description=Start Modern Form Fans to MQTT gateway
+After=network.target mosquitto.service
+
+[Service]
+User=nodejs
+ExecStart=/usr/bin/nodejs ./mf-mqtt.js
+ExecReload=/bin/kill $MAINPID
+WorkingDirectory=/opt/mf-mqtt
+Type=simple
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

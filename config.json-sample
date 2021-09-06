@@ -1,0 +1,42 @@
+{
+  "debug": false,
+  "discover_expire": {
+    "hours": 12,
+    "minutes": 1
+  },
+  "fan_ips": [
+    "192.168.1.0/24"
+  ],
+  "command_topic": "home/fan/command",
+  "fan_set_topic": "home/fan/+/set/+",
+  "fan_attribute_topic": "home/fan/%s/%s",
+  "fans": {
+    "MF_123456789020": {
+      "name": "Main Bedroom"
+    },
+    "MF_1234567890EC": {
+	    "name": "Living Room 1"
+    },
+    "MF_1234567893F0": {
+	    "name": "Living Room 2"
+    }
+  },
+  "mqtt_conf": {
+    "cafile": "./easyrsa-ca.crt",
+    "host": "mqtt.example.com",
+    "keepalive": 60,
+    "password": "not_a_real_password",
+    "ping_topic": "ping/fan/_ping",
+    "port": "8883",
+    "protocol": "mqtts",
+    "topic_prefix": "home/fan",
+    "username": "zwavejs2mqtt"
+  },
+  "new_fan_attribute": "ipaddress",
+  "new_fan_topic": "home/network/dhcp/+",
+  "poll_active": 5,
+  "poll_idle": 10,
+  "slug_separator": "_",
+  "status_topic": "home/fan/mf-mqtt/status",
+  "verbose": true
+}
